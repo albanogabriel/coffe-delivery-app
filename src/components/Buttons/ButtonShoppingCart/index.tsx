@@ -7,12 +7,12 @@ import { AddCartButton, ViewCartButton } from './styles'
 interface ButtonShoppingCartType
   extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: 'cartAdd' | 'cartView'
+  itens: number
 }
-
-const hasItens = true
 
 export function ButtonShoppingCart({
   variant,
+  itens,
   ...props
 }: ButtonShoppingCartType) {
   if (variant === 'cartAdd') {
@@ -22,9 +22,13 @@ export function ButtonShoppingCart({
       </AddCartButton>
     )
   } else if (variant === 'cartView') {
+    const hasItens = itens > 0
+    const itsBiggerThen99 = itens >= 99
+    const displayValue = itsBiggerThen99 ? '99' : itens
+
     return (
       <ViewCartButton {...props}>
-        {hasItens ? <span>3</span> : null}
+        {hasItens ? <span>{displayValue}</span> : null}
         <img src={cartViewIcon} alt="" />
       </ViewCartButton>
     )
