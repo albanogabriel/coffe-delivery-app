@@ -1,5 +1,17 @@
-import { Teste } from './styles'
-
+import { HeroSection } from '../HeroSection'
 export function Home() {
-  return <Teste>Home</Teste>
+  return (
+    <>
+      <HeroSection />
+      <h1>teste</h1>
+      <h1>teste</h1>
+      <h1>teste</h1>
+      <h1>teste</h1>
+      <h1>teste</h1>
+      <h1>teste</h1>
+      <h1>teste</h1>
+      <h1>teste</h1>
+      <h1>teste</h1>
+    </>
+  )
 }
