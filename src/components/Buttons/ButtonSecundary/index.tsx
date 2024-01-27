@@ -1,8 +1,8 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react'
+import { ButtonHTMLAttributes, ReactNode, useState } from 'react'
 import { ButtonSecundaryLocation, ButtonSecundaryTrash } from './styles'
 
 import trashIcon from '../../../assets/icons/trash-purple-icon.svg'
-import locationIcon from '../../../assets/icons/map-pin-fill-purple.svg'
+import locationIcon from '../../../assets/icons/ma-pin-fill-purple-icon.svg'
 
 export interface SecundaryButtonType
   extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,6 +15,8 @@ export function SecundaryButton({
   variant,
   ...props
 }: SecundaryButtonType) {
+  const [mouseEnter, setMouseEnter] = useState(false)
+
   if (variant === 'trash') {
     return (
       <ButtonSecundaryTrash {...props}>
@@ -24,9 +26,13 @@ export function SecundaryButton({
     )
   } else if (variant === 'location') {
     return (
-      <ButtonSecundaryLocation {...props}>
+      <ButtonSecundaryLocation
+        onMouseEnter={() => setMouseEnter(true)}
+        onMouseLeave={() => setMouseEnter(false)}
+        {...props}
+      >
         <img src={locationIcon} alt="" />
-        {children}
+        {mouseEnter ? <div>{children}</div> : null}
       </ButtonSecundaryLocation>
     )
   } else {

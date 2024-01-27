@@ -1,13 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 60% 40%;
   align-items: flex-start;
-  justify-content: center;
-  align-items: center;
-  /* justify-content: center; */
-  padding: 126px 160px;
-  gap: 56px;
 
   main {
     display: flex;
@@ -30,10 +26,8 @@ export const Container = styled.div`
   }
 
   aside {
-    height: 450px;
-
     img {
-      height: 100%;
+      width: 450px;
     }
   }
 `

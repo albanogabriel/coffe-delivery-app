@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 
 export const CartButton = styled.button`
-  padding: 8px;
+  display: flex;
+  padding: 12px;
   border-radius: 6px;
   border: none;
   cursor: pointer;
 
   img {
-    height: 22px;
+    height: 20px;
+    max-width: 20px;
   }
 `
 
@@ -24,6 +26,7 @@ export const ViewCartButton = styled(CartButton)`
   background: ${(props) => props.theme.colors.yellow['yellow-light']};
 
   span {
+    font-size: 12px;
     position: absolute;
     display: flex;
     justify-content: center;

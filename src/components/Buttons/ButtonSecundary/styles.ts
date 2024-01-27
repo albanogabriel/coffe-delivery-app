@@ -7,6 +7,7 @@ export const Button = styled.button`
   line-height: ${(props) => props.theme.buttonStyle.buttonMedium.lineHeight};
   border: none;
   cursor: pointer;
+  padding: 12px;
 `
 
 export const ButtonSecundaryTrash = styled(Button)`
@@ -19,7 +20,6 @@ export const ButtonSecundaryTrash = styled(Button)`
   background: ${(props) => props.theme.colors.gray['gray-300']};
   font-size: ${(props) => props.theme.buttonStyle.buttonMedium.size};
   font-weight: ${(props) => props.theme.buttonStyle.buttonMedium.fontWeight};
-  padding: 8px;
 
   img {
     color: ${(props) => props.theme.colors.purple.purple};
@@ -40,7 +40,6 @@ export const ButtonSecundaryLocation = styled(Button)`
   background: ${(props) => props.theme.colors.purple['purple-light']};
   font-size: ${(props) => props.theme.buttonStyle.buttonMedium.size};
   font-weight: ${(props) => props.theme.buttonStyle.buttonMedium.fontWeight};
-  padding: 8px;
 
   img {
     color: ${(props) => props.theme.colors.purple['purple-dark']};
@@ -48,6 +47,6 @@ export const ButtonSecundaryLocation = styled(Button)`
   }
 
   &:hover {
-    background: ${(props) => props.theme.colors.gray['gray-400']};
+    background: ${(props) => props.theme.colors.gray['gray-300']};
   }
 `

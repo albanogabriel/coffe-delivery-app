@@ -20,6 +20,7 @@ export const HeaderLayout = styled.header<HeaderLayoutProps>`
 
   div {
     display: flex;
+    align-items: center;
     gap: 12px;
   }
 `
