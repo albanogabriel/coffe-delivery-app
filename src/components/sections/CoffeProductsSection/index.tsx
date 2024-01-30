@@ -1,12 +1,12 @@
-import { CoffeCard } from '../../CoffeCard'
+import { CoffeeCards } from '../../CoffeeCards'
 import { TitleBaloo } from '../../Fonts/TitleBaloo'
-import { CoffeProductsContainer } from './styles'
+import { CoffeeProductsContainer } from './styles'
 
-export function CoffeProductsSection() {
+export function CoffeeProductsSection() {
   return (
-    <CoffeProductsContainer>
+    <CoffeeProductsContainer>
       <TitleBaloo variant="xl">Nosso Cafés</TitleBaloo>
-      <CoffeCard />
-    </CoffeProductsContainer>
+      <CoffeeCards />
+    </CoffeeProductsContainer>
   )
 }

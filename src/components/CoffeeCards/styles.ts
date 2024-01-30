@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
-export const CoffeListContainer = styled.div`
+export const CoffeeListContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+
   gap: 32px;
+  max-width: 1200px;
 `
 
 export const Background = styled.div`
@@ -13,7 +15,7 @@ export const Background = styled.div`
   border-radius: 6px 36px;
 `
 
-export const CoffeContent = styled.div`
+export const CoffeeContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -21,7 +23,7 @@ export const CoffeContent = styled.div`
   align-items: center;
   text-align: center;
 `
-export const CoffeContentContainer = styled.div`
+export const CoffeeContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;

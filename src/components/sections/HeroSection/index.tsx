@@ -6,7 +6,7 @@ import { Icon } from '../../Icons'
 import cartIcon from '../../../assets/icons/icons-gray-100/Type=shopping-cart-fill.svg'
 import packageIcon from '../../../assets/icons/icons-gray-100/Type=package-fill.svg'
 import timeWatchIcon from '../../../assets/icons/icons-gray-100/Type=timer-fill.svg'
-import coffeWarmIcon from '../../../assets/icons/icons-gray-100/Type=coffee-fill.svg'
+import coffeeWarmIcon from '../../../assets/icons/icons-gray-100/Type=coffee-fill.svg'
 
 export function HeroSection() {
   return (
@@ -15,7 +15,7 @@ export function HeroSection() {
         <div>
           <h1>Encontre o café perfeito para qualquerhora do dia</h1>
           <p>
-            Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
+            Com o coffeee Delivery você recebe seu café onde estiver, a qualquer
             hora
           </p>
         </div>
@@ -32,7 +32,7 @@ export function HeroSection() {
           />
           <Icon
             color="yellow"
-            icon={coffeWarmIcon}
+            icon={coffeeWarmIcon}
             text="O café chega fresquinho até você"
           />
           <Icon

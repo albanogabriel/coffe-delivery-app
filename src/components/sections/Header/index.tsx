@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import coffeDeliveryLogo from '../../../assets/coffeDeliveryLogo.svg'
+import coffeeDeliveryLogo from '../../../assets/coffeeDeliveryLogo.svg'
 import { SecundaryButton } from '../../Buttons/ButtonSecundary'
 import { ButtonShoppingCart } from '../../Buttons/ButtonShoppingCart'
 import { HeaderLayout } from './style'
@@ -25,7 +25,7 @@ export function Header() {
 
   return (
     <HeaderLayout isScrolled={isScrolled}>
-      <img src={coffeDeliveryLogo} alt="" />
+      <img src={coffeeDeliveryLogo} alt="" />
       <div>
         <NavLink to="#location">
           <SecundaryButton variant="location">
