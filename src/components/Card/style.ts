@@ -1,13 +1,5 @@
 import styled from 'styled-components'
 
-export const CoffeeListContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 32px;
-  max-width: 1200px;
-`
-
 export const Background = styled.div`
   background-color: rgba(255, 255, 255, 0.4);
   width: 100%;
@@ -15,7 +7,7 @@ export const Background = styled.div`
   border-radius: 6px 36px;
 `
 
-export const CoffeeContent = styled.div`
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -23,7 +15,7 @@ export const CoffeeContent = styled.div`
   align-items: center;
   text-align: center;
 `
-export const CoffeeContentContainer = styled.div`
+export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -58,23 +50,5 @@ export const AddToCartContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 8px;
-  }
-`
-export const HowManyAddToCartContainer = styled.div`
-  display: flex;
-  gap: 8px;
-  align-items: center;
-
-  div {
-    display: flex;
-    gap: 16px;
-    background-color: ${(props) => props.theme.colors.gray['gray-300']};
-    border-radius: 6px;
-    padding: 13px 18px;
-    width: auto;
-
-    span {
-      /* font-size: 16px; */
-    }
   }
 `

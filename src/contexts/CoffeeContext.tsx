@@ -32,7 +32,7 @@ export function CoffeeContextProvider({
       id: data.id,
       coffeeImg: data.coffeeImg,
       title: data.title,
-      value: data.value,
+      price: data.price,
       quantidade: data.quantidade,
       total: data.total,
     }

@@ -1,5 +1,5 @@
-import { CoffeeProductsSection } from '../../components/sections/CoffeProductsSection'
-import { HeroSection } from '../../components/sections/HeroSection'
+import { CoffeeProductsSection } from './sections/CoffeProductsSection'
+import { HeroSection } from './sections/HeroSection'
 import { Container } from './styles'
 
 export function Home() {

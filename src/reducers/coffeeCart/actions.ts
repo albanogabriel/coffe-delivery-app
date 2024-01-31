@@ -5,7 +5,6 @@ export enum ActionTypes {
 }
 
 export function addItemToCartAction(coffee: CoffeeCart) {
-  console.log({ actioncoffee: coffee })
   return {
     type: ActionTypes.ADD_ITEM_TO_CART,
     payload: {

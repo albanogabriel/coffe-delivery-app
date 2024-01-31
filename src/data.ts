@@ -11,7 +11,7 @@ export const coffeeList = [
     coffeeType: ['TRADICIONAL'],
     title: 'Expresso Tradicional',
     description: 'O tradicional café feito com água quente e grãos moídos',
-    value: '6,90',
+    price: '6,90',
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const coffeeList = [
     coffeeType: ['TRADICIONAL'],
     title: 'Café Americano',
     description: 'Expresso diluído, menos intenso que o tradicional',
-    value: '9,90',
+    price: '9,90',
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const coffeeList = [
     coffeeType: ['TRADICIONAL'],
     title: 'Expresso Cremoso',
     description: 'Café expresso tradicional com espuma cremosa',
-    value: '12,90',
+    price: '12,90',
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const coffeeList = [
     coffeeType: ['TRADICIONAL', 'GELADO'],
     title: 'Expresso Cremoso',
     description: 'Bebida Preparada com café expresso e cubos de gelo',
-    value: '11,90',
+    price: '11,90',
   },
   {
     id: 5,
@@ -43,6 +43,6 @@ export const coffeeList = [
     coffeeType: ['TRADICIONAL', 'COM LEITE'],
     title: 'Café com Leite',
     description: 'Meio a meio de expresso tradicional com leite vaporizado',
-    value: '13,90',
+    price: '13,90',
   },
 ]

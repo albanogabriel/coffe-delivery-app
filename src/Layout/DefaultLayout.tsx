@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import { Header } from '../components/sections/Header'
+import { Header } from '../Pages/Home/sections/Header'
 import { Content, RadialBackground } from './styles'
 
 export function DefaultLayout() {

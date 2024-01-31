@@ -6,3 +6,9 @@ export const CoffeeProductsContainer = styled.div`
 
   gap: 64px;
 `
+
+export const CoffeeListContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+`

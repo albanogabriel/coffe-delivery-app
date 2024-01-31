@@ -24,7 +24,7 @@ export function ButtonShoppingCart({
   } else if (variant === 'cartView') {
     const hasItens = itens && itens > 0
     const itsBiggerThen99 = itens && itens >= 99
-    const displayValue = itsBiggerThen99 ? '99' : itens
+    const displayValue = itsBiggerThen99 ? '99' : itens && itens
 
     return (
       <ViewCartButton {...props}>

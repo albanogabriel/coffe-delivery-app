@@ -1,11 +1,18 @@
-import { useState, useEffect } from 'react'
-import coffeeDeliveryLogo from '../../../assets/coffeeDeliveryLogo.svg'
-import { SecundaryButton } from '../../Buttons/ButtonSecundary'
-import { ButtonShoppingCart } from '../../Buttons/ButtonShoppingCart'
+import { useState, useEffect, useContext } from 'react'
+import coffeeDeliveryLogo from '../../../../assets/coffeeDeliveryLogo.svg'
+import { SecundaryButton } from '../../../../components/Buttons/ButtonSecundary'
+import { ButtonShoppingCart } from '../../../../components/Buttons/ButtonShoppingCart'
 import { HeaderLayout } from './style'
 import { NavLink } from 'react-router-dom'
+import { CoffeeContext } from '../../../../contexts/CoffeeContext'
 
 export function Header() {
+  const { cart } = useContext(CoffeeContext)
+
+  const cartItensAmount = cart
+    .map((itens) => itens.quantidade ?? 0) // ex: [1, 4, 5, 6] -> retorna um array com apenas com itens.quantidade(total que foi adicionado) / item.quantidade ?? 0 significa que se item.quantidade for null ou undefined, será retornado 0.
+    .reduce((acc, numero) => acc + numero, 0) // ex: 0 + 1 / 1 + 4 / 5 + 6 ... ->  soma com um reduce, todas os valores do array gerado pelo map acima
+
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -23,6 +30,8 @@ export function Header() {
     }
   }, [])
 
+  function handleUpdateCart() {}
+
   return (
     <HeaderLayout isScrolled={isScrolled}>
       <img src={coffeeDeliveryLogo} alt="" />
@@ -35,8 +44,9 @@ export function Header() {
         <NavLink to="/cart">
           <ButtonShoppingCart
             variant="cartView"
-            itens={9}
+            itens={cartItensAmount}
             title={'ver carrinho'}
+            onClick={handleUpdateCart}
           />
         </NavLink>
       </div>
