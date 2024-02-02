@@ -13,7 +13,7 @@ export function HeroSection() {
     <Container>
       <main>
         <div>
-          <h1>Encontre o café perfeito para qualquerhora do dia</h1>
+          <h1>Encontre o café perfeito para qualquer hora do seu dia</h1>
           <p>
             Com o coffeee Delivery você recebe seu café onde estiver, a qualquer
             hora

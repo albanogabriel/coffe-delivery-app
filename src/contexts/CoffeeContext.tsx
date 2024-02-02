@@ -10,6 +10,7 @@ import { addItemToCartAction } from '../reducers/coffeeCart/actions'
 export interface CoffeeContextType {
   cart: CoffeeCart[]
   addToCart: (data: CoffeeCard) => void
+  cartIsEmpty: boolean
 }
 
 export const CoffeeContext = createContext({} as CoffeeContextType)
@@ -27,6 +28,8 @@ export function CoffeeContextProvider({
 
   const { cart } = carrinho
 
+  const cartIsEmpty = cart.length === 0
+
   function addToCart(data: CoffeeCard) {
     const itemNoCarrinho = {
       id: data.id,
@@ -41,7 +44,7 @@ export function CoffeeContextProvider({
   }
 
   return (
-    <CoffeeContext.Provider value={{ addToCart, cart }}>
+    <CoffeeContext.Provider value={{ addToCart, cart, cartIsEmpty }}>
       {children}
     </CoffeeContext.Provider>
   )

@@ -6,7 +6,7 @@ import locationIcon from '../../../assets/icons/ma-pin-fill-purple-icon.svg'
 
 export interface SecundaryButtonType
   extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode
+  children?: ReactNode
   variant: 'trash' | 'location'
 }
 

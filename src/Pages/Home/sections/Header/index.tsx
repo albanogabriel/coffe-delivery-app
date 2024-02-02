@@ -34,7 +34,9 @@ export function Header() {
 
   return (
     <HeaderLayout isScrolled={isScrolled}>
-      <img src={coffeeDeliveryLogo} alt="" />
+      <NavLink to="/">
+        <img src={coffeeDeliveryLogo} alt="" />
+      </NavLink>
       <div>
         <NavLink to="#location">
           <SecundaryButton variant="location">

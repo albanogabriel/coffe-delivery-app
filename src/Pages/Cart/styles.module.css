@@ -1,0 +1,58 @@
+.completeOrder {
+  border-radius: 6px;
+  background-color: rgba(144, 144, 144, 0.1);
+  padding: 40px;
+}
+
+.completeOrderContent {
+  display: flex;
+  flex-direction: column;
+  gap: 14px
+}
+
+.cartCheckout {
+  border-radius: 6px 44px;
+  background-color: rgba(125, 125, 125, 0.1);
+  padding: 40px;
+}
+
+.enderecoDeEntregaDiv {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 32px;
+}
+
+.pagamento {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 32px;
+}
+
+.pagamentoDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 32px;
+}
+
+.locationPinSpan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex{ 
+  display: flex;
+  gap: 8px;
+}
+
+.flex-column{ 
+  display: flex;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+

@@ -13,8 +13,9 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  :focus {
-    outline: none;
+  &:focus {
+    outline: transparent; /* removes the default focus */
+    box-shadow: 0 0 0 2px ${(props) => props.theme.colors.purple.purple};
   }
   
   body, input, textarea, button {

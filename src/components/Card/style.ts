@@ -43,12 +43,27 @@ export const ContentContainer = styled.div`
 export const AddToCartContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
+`
 
-  div {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+export const Money = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`
+
+export const Contador = styled.div`
+  display: flex;
+  gap: 16px;
+  background-color: ${(props) => props.theme.colors.gray['gray-300']};
+  padding: 12px;
+  border-radius: 4px;
+`
+
+export const MinusContador = styled.nav`
+  cursor: pointer;
+`
+
+export const PlusContador = styled.nav`
+  cursor: pointer;
 `
