@@ -32,15 +32,15 @@ export function Card({ data }: CardProps) {
   }
 
   function handleAddToCart(data: CoffeeCard) {
-    const valorNumerico = parseFloat(data.price.replace(',', '.')) // Converter a string para um número
-    const valorArredondado = Number(valorNumerico.toFixed(2)) // Arredondar para duas casas decimais e converter de volta para número
-    const total = quantidade * valorArredondado
+    const commaToDopt = data.price.replace(',', '.')
+    const convertedNumber = parseFloat(commaToDopt)
+    const total = quantidade * convertedNumber
 
     if (quantidade > 0) {
       addToCart({
+        ...data,
         quantidade,
         total,
-        ...data,
       })
     } else {
       alert('Você não adicinou nenhum item')

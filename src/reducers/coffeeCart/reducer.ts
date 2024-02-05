@@ -20,8 +20,23 @@ export interface CoffeeCart {
   total?: number
 }
 
+export interface CheckoutItens {
+  cep: string
+  endereco: string
+  numero: string
+  complemento?: string
+  bairro: string
+  cidade: string
+  UF: string
+  metodoPagamento?: string
+  pagamento?: string
+  totalItens?: number
+  totalPedido?: number
+}
+
 export interface CoffeeState {
   cart: CoffeeCart[]
+  checkoutItens: CheckoutItens[]
 }
 
 let existingCoffee: CoffeeCart | undefined
@@ -58,6 +73,12 @@ export function cyclesReducer(state: CoffeeState, action: any) {
         }
       }
 
+    case ActionTypes.CHECKOUT_ITEMS:
+      return {
+        ...state,
+        cart: [],
+        checkoutItens: [...state.checkoutItens, action.payload.checkoutItens],
+      }
     default:
       return state
   }

@@ -1,10 +1,10 @@
 import { useState, useEffect, useContext } from 'react'
-import coffeeDeliveryLogo from '../../../../assets/coffeeDeliveryLogo.svg'
-import { SecundaryButton } from '../../../../components/Buttons/ButtonSecundary'
-import { ButtonShoppingCart } from '../../../../components/Buttons/ButtonShoppingCart'
+import coffeeDeliveryLogo from '../../assets/coffeeDeliveryLogo.svg'
+import { SecundaryButton } from '../../components/Buttons/ButtonSecundary'
+import { ButtonShoppingCart } from '../../components/Buttons/ButtonShoppingCart'
 import { HeaderLayout } from './style'
 import { NavLink } from 'react-router-dom'
-import { CoffeeContext } from '../../../../contexts/CoffeeContext'
+import { CoffeeContext } from '../../contexts/CoffeeContext'
 
 export function Header() {
   const { cart } = useContext(CoffeeContext)

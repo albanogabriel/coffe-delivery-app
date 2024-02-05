@@ -1,4 +1,4 @@
-import { Card } from '../../../../components/Card/Card'
+import { Card } from '../../../../components/Card'
 import { TitleBaloo } from '../../../../components/Fonts/TitleBaloo'
 import { coffeeList } from '../../../../data'
 import { CoffeeProductsContainer, CoffeeListContainer } from './styles'

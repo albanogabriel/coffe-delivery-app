@@ -21,6 +21,12 @@ interface Props {
 }
 
 export function CoffeeOnCart({ data }: Props) {
+  const total = data.total
+  const NumberFormattedToCurrency = total?.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  })
+
   return (
     <ItemContainer>
       <CoffeeItemContainer>
@@ -42,7 +48,7 @@ export function CoffeeOnCart({ data }: Props) {
             </ContadorAndButton>
           </TitleAndContador>
         </ImgTitleAndContador>
-        <TitleBaloo variant="sm">R$ {data.total}</TitleBaloo>
+        <TitleBaloo variant="sm">{NumberFormattedToCurrency}</TitleBaloo>
       </CoffeeItemContainer>
       <Line />
     </ItemContainer>

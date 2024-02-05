@@ -15,7 +15,6 @@ export const GlobalStyle = createGlobalStyle`
 
   &:focus {
     outline: transparent; /* removes the default focus */
-    box-shadow: 0 0 0 2px ${(props) => props.theme.colors.purple.purple};
   }
   
   body, input, textarea, button {
