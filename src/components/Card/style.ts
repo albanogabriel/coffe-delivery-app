@@ -19,7 +19,7 @@ export const Content = styled.div`
 export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -34,9 +34,12 @@ export const ContentContainer = styled.div`
 
     div {
       background-color: ${(props) => props.theme.colors.yellow['yellow-light']};
-      color: ${(props) => props.theme.colors.yellow['yellow-dark']};
-      padding: 8px;
+      padding: 4px 8px;
       border-radius: 6px;
+
+      span {
+        color: ${(props) => props.theme.colors.yellow['yellow-dark']};
+      }
     }
   }
 `

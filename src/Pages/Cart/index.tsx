@@ -35,6 +35,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod'
 import { CheckoutItens } from '../../reducers/coffeeCart/reducer'
 import { useNavigate } from 'react-router-dom'
+import { CartEmptyPage } from './CartEmptyPage'
 
 export function Cart() {
   const { cart, cartIsEmpty, checkoutProducts } = useContext(CoffeeContext)
@@ -108,9 +109,7 @@ export function Cart() {
   return (
     <>
       {cartIsEmpty ? (
-        <Container>
-          <h1>Nosso carrinho está vazio</h1>
-        </Container>
+        <CartEmptyPage />
       ) : (
         <form onSubmit={handleSubmit(checkoutCoffeeItens)}>
           <Container>

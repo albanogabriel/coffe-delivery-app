@@ -57,7 +57,9 @@ export function Card({ data }: CardProps) {
           <span>
             {data.coffeeType.map((type, index) => (
               <div key={index}>
-                <TextRoboto variant="xs">{type}</TextRoboto>
+                <TextRoboto variant="xs">
+                  <span>{type}</span>
+                </TextRoboto>
               </div>
             ))}
           </span>

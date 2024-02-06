@@ -35,10 +35,9 @@ export function CoffeeOnCart({ data }: Props) {
   })
 
   function handleDecrease() {
-    const quantidade = data.quantidade
+    const quantidade = data.quantidade ?? 0 // Se quantidade for undefined, assume o valor 0
 
-    if (quantidade ?? 0 > 1) {
-      // Se quantidade for undefined, assume o valor 0
+    if (quantidade > 1) {
       decreaseItemOnCart(data.id)
     }
   }
