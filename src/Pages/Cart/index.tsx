@@ -1,4 +1,6 @@
 import { useContext, useState } from 'react'
+import { useForm } from 'react-hook-form'
+
 import {
   ButtonCheckout,
   ChoseYourPaymentMethod,
@@ -12,21 +14,20 @@ import {
   SelectUF,
 } from './styles'
 
+import styles from './styles.module.css'
+
 import { CoffeeContext } from '../../contexts/CoffeeContext'
 
-import styles from './styles.module.css'
 import { TitleBaloo } from '../../components/Fonts/TitleBaloo'
-
-import locationPinOrange from '../../assets/location-pin-orange.svg'
-import dollarSignIcon from '../../assets/dollarsign-purple.svg'
-
 import { TextRoboto } from '../../components/Fonts/TextRoboto'
 import { CoffeeOnCart } from '../../components/CoffeeOnCart'
 
+import locationPinOrange from '../../assets/location-pin-orange.svg'
+import dollarSignIcon from '../../assets/dollarsign-purple.svg'
 import creditCardIcon from '../../assets/paymentMethods/creditCardIcon.svg'
 import debitoIcon from '../../assets/paymentMethods/transferMoneyIcon.svg'
 import moneyIcon from '../../assets/paymentMethods/MoneyIcon.svg'
-import { useForm } from 'react-hook-form'
+
 import {
   CheckoutSchema,
   CheckoutSchemaType,
@@ -41,7 +42,7 @@ export function Cart() {
 
   const navigate = useNavigate()
 
-  const tipoDePagamentoExists = tipoDePagamento.length > 0
+  // const tipoDePagamentoExists = tipoDePagamento.length > 0
 
   const frete = 3.5
   const freteFormatted = frete.toLocaleString('pt-BR', {
@@ -70,6 +71,7 @@ export function Cart() {
   const {
     register,
     handleSubmit,
+    setValue,
     // reset,
     formState: { errors },
   } = useForm<CheckoutSchemaType>({
@@ -77,6 +79,9 @@ export function Cart() {
   })
 
   function checkoutCoffeeItens(data: CheckoutItens) {
+    // 1 - direto do useState --> pega a const tipoDePagamento --> const pagamento = tipoDePagamento --> joga dentro do checkoutProducts ({ ...data , pagamento })
+    // 2 - Cria um booleando --> const tipoDePagamentoExists = tipoDePagamento.length > 0 --> existe alguma string dentro da const tipoDePagamentoExists ? se sim, renderiza o input --> { tipoDePagamentoExists ? <input value={tipoDePagamento}><input>}
+    // 3 - Método setValue --> do próprio useForm, atribui um valor direto ao objeto de nosso Schema --> setValue(1º param , 2º param) --> 1º param = atributo/propriedade , 2º param = 'valor que vai passar' --> exemplo: setValue('metodoPagamento', 'Crédito') --> atribui Crédito ao metodo de pagamento
     console.log(JSON.stringify(data, null, 2))
     const pagamento = tipoDePagamento
     const totalItens = totalDeItens
@@ -263,16 +268,16 @@ export function Cart() {
                     </div>
                   </div>
                   <PaymentMethodsContainer>
-                    {/* estou condicionando a montagem do input com o seu value={tipoDepagamento}, por conta das closures. ou seja, somente se tiver algum valor no estado, ele que vai montar, isso garantirá que exista algum valor em value={tipoDePagamento} e não ''. obs: descobrir como fazer isso da forma correta */}
                     <div>
-                      {tipoDePagamentoExists ? (
+                      {/* estou condicionando a montagem do input com o seu value={tipoDepagamento}, por conta das closures. ou seja, somente se tiver algum valor no estado, ele que vai montar, isso garantirá que exista algum valor em value={tipoDePagamento} e não ''. obs: descobrir como fazer isso da forma correta */}
+                      {/* {tipoDePagamentoExists ? (
                         <input
                           readOnly
                           type="text"
                           value={tipoDePagamento}
                           {...register('metodoPagamento')}
                         />
-                      ) : null}
+                      ) : null} */}
                     </div>
                     <div className={styles['flex-column']}>
                       <div className={styles.flex}>
@@ -280,6 +285,7 @@ export function Cart() {
                           onClick={(event) => {
                             event.preventDefault()
                             setTipoDePagamento('Crédito')
+                            setValue('metodoPagamento', 'Crédito')
                           }}
                           className={
                             tipoDePagamento === 'Crédito' ? 'isActive' : ''
@@ -292,6 +298,7 @@ export function Cart() {
                           onClick={(event) => {
                             event.preventDefault()
                             setTipoDePagamento('Débito')
+                            setValue('metodoPagamento', 'Débito')
                           }}
                           className={
                             tipoDePagamento === 'Débito' ? 'isActive' : ''
@@ -304,6 +311,7 @@ export function Cart() {
                           onClick={(event) => {
                             event.preventDefault()
                             setTipoDePagamento('Dinheiro')
+                            setValue('metodoPagamento', 'Dinheiro')
                           }}
                           className={
                             tipoDePagamento === 'Dinheiro' ? 'isActive' : ''

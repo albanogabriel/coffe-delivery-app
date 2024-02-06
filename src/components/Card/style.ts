@@ -1,3 +1,4 @@
+import { Minus, Plus } from 'phosphor-react'
 import styled from 'styled-components'
 
 export const Background = styled.div`
@@ -54,6 +55,7 @@ export const Money = styled.div`
 
 export const Contador = styled.div`
   display: flex;
+  align-items: center;
   gap: 16px;
   background-color: ${(props) => props.theme.colors.gray['gray-300']};
   padding: 12px;
@@ -66,4 +68,22 @@ export const MinusContador = styled.nav`
 
 export const PlusContador = styled.nav`
   cursor: pointer;
+`
+
+export const StyledMinus = styled(Minus)`
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.purple.purple};
+
+  &:hover {
+    color: ${(props) => props.theme.colors.purple['purple-dark']};
+  }
+`
+
+export const StyledPlus = styled(Plus)`
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.purple.purple};
+
+  &:hover {
+    color: ${(props) => props.theme.colors.purple['purple-dark']};
+  }
 `

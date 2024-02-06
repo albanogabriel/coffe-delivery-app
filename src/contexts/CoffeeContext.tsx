@@ -9,6 +9,9 @@ import {
 import {
   addItemToCartAction,
   checkouItemAction,
+  decreaseItemOnCartAction,
+  deleteItemOnCartAction,
+  increaseItemOnCartAction,
 } from '../reducers/coffeeCart/actions'
 
 export interface CoffeeContextType {
@@ -17,6 +20,9 @@ export interface CoffeeContextType {
   addToCart: (data: CoffeeCard) => void
   cartIsEmpty: boolean
   checkoutProducts: (data: CheckoutItens) => void
+  decreaseItemOnCart: (data: number) => void
+  increaseItemOnCart: (data: number) => void
+  deleteItemOnCart: (data: number) => void
 }
 
 export const CoffeeContext = createContext({} as CoffeeContextType)
@@ -58,9 +64,31 @@ export function CoffeeContextProvider({
     dispatch(checkouItemAction(checkoutItens))
   }
 
+  function decreaseItemOnCart(id: number) {
+    console.log({ decrease: id })
+    dispatch(decreaseItemOnCartAction(id))
+  }
+
+  function increaseItemOnCart(id: number) {
+    dispatch(increaseItemOnCartAction(id))
+  }
+
+  function deleteItemOnCart(id: number) {
+    dispatch(deleteItemOnCartAction(id))
+  }
+
   return (
     <CoffeeContext.Provider
-      value={{ addToCart, cart, cartIsEmpty, checkoutProducts, checkoutItens }}
+      value={{
+        addToCart,
+        cart,
+        cartIsEmpty,
+        checkoutProducts,
+        checkoutItens,
+        decreaseItemOnCart,
+        increaseItemOnCart,
+        deleteItemOnCart,
+      }}
     >
       {children}
     </CoffeeContext.Provider>

@@ -12,21 +12,44 @@ import {
   ImgTitleAndContador,
   ItemContainer,
   Line,
+  StyledMinus,
+  StyledPlus,
   Title,
   TitleAndContador,
 } from './style'
+import { useContext } from 'react'
+import { CoffeeContext } from '../../contexts/CoffeeContext'
 
 interface Props {
   data: CoffeeCart
 }
 
 export function CoffeeOnCart({ data }: Props) {
+  const { decreaseItemOnCart, increaseItemOnCart, deleteItemOnCart } =
+    useContext(CoffeeContext)
+
   const total = data.total
   const NumberFormattedToCurrency = total?.toLocaleString('pt-BR', {
     style: 'currency',
     currency: 'BRL',
   })
 
+  function handleDecrease() {
+    const quantidade = data.quantidade
+
+    if (quantidade ?? 0 > 1) {
+      // Se quantidade for undefined, assume o valor 0
+      decreaseItemOnCart(data.id)
+    }
+  }
+
+  function handleIncrease() {
+    increaseItemOnCart(data.id)
+  }
+
+  function handleDeleteItem() {
+    deleteItemOnCart(data.id)
+  }
   return (
     <ItemContainer>
       <CoffeeItemContainer>
@@ -36,11 +59,12 @@ export function CoffeeOnCart({ data }: Props) {
             <Title>{data.title}</Title>
             <ContadorAndButton>
               <Contador>
-                <span>-</span>
+                <StyledMinus onClick={handleDecrease}>-</StyledMinus>
                 <span>{data.quantidade}</span>
-                <span>+</span>
+                <StyledPlus onClick={handleIncrease}>+</StyledPlus>
               </Contador>
               <SecundaryButton
+                onClick={handleDeleteItem}
                 variant="trash"
                 className={styles.text}
                 title="remover"

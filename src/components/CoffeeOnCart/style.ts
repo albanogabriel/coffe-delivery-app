@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Minus, Plus } from 'phosphor-react'
 
 export const ItemContainer = styled.div`
   display: flex;
@@ -40,11 +41,31 @@ export const ContadorAndButton = styled.div`
 
 export const Contador = styled.div`
   display: flex;
+  align-items: center;
   gap: 14px;
   font-size: 16px;
   padding: 12px;
   background-color: ${(props) => props.theme.colors.gray['gray-300']};
   border-radius: 8px;
+`
+
+export const ContadorButtonMinus = styled.span`
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.purple.purple};
+  /* font-size: 24px; */
+
+  &:hover {
+    color: ${(props) => props.theme.colors.purple['purple-dark']};
+  }
+`
+export const ContadorButtonPlus = styled.span`
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.purple.purple};
+  font-size: 16px;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.purple['purple-dark']};
+  }
 `
 
 export const Button = styled.div`
@@ -58,4 +79,22 @@ export const Line = styled.div`
   width: 100%;
   background-color: ${(props) => props.theme.colors.gray['gray-500']};
   margin-bottom: 24px;
+`
+
+export const StyledMinus = styled(Minus)`
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.purple.purple};
+
+  &:hover {
+    color: ${(props) => props.theme.colors.purple['purple-dark']};
+  }
+`
+
+export const StyledPlus = styled(Plus)`
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.purple.purple};
+
+  &:hover {
+    color: ${(props) => props.theme.colors.purple['purple-dark']};
+  }
 `

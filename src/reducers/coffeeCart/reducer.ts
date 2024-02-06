@@ -79,6 +79,50 @@ export function cyclesReducer(state: CoffeeState, action: any) {
         cart: [],
         checkoutItens: [...state.checkoutItens, action.payload.checkoutItens],
       }
+    case ActionTypes.DECREASE_ITEM:
+      return {
+        ...state,
+        cart: state.cart.map((item) => {
+          const quantidade = item.quantidade || 0
+
+          if (item.id === action.payload.id) {
+            return {
+              ...item,
+              quantidade: quantidade - 1,
+              total:
+                (quantidade - 1) *
+                Number(parseFloat(item.price.replace(',', '.'))),
+            }
+          } else {
+            return item
+          }
+        }),
+      }
+    case ActionTypes.INCREASE_ITEM:
+      return {
+        ...state,
+        cart: state.cart.map((item) => {
+          if (item.id === action.payload.id) {
+            const quantidade = item.quantidade || 0
+            const price = Number(parseFloat(item.price.replace(',', '.')))
+
+            return {
+              ...item,
+              quantidade: quantidade + 1,
+              total: (quantidade + 1) * price,
+            }
+          } else {
+            return item
+          }
+        }),
+      }
+    case ActionTypes.DELETE_ITEM:
+      return {
+        ...state,
+        cart: state.cart.filter((item) => {
+          return item.id !== action.payload.id
+        }),
+      }
     default:
       return state
   }

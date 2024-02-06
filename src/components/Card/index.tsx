@@ -7,10 +7,10 @@ import {
   AddToCartContainer,
   Content,
   ContentContainer,
-  PlusContador,
   Contador,
-  MinusContador,
   Money,
+  StyledMinus,
+  StyledPlus,
 } from './style'
 import { CoffeeContext } from '../../contexts/CoffeeContext'
 import { CoffeeCard } from '../../reducers/coffeeCart/reducer'
@@ -72,9 +72,9 @@ export function Card({ data }: CardProps) {
           </Money>
 
           <Contador>
-            <MinusContador onClick={handleDecrement}>-</MinusContador>
+            <StyledMinus onClick={handleDecrement}>-</StyledMinus>
             <span>{quantidade}</span>
-            <PlusContador onClick={handleIncrement}>+</PlusContador>
+            <StyledPlus onClick={handleIncrement}>+</StyledPlus>
           </Contador>
 
           <ButtonShoppingCart
