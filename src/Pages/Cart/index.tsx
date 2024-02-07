@@ -74,6 +74,7 @@ export function Cart() {
     handleSubmit,
     setValue,
     // reset,
+    // watch,
     formState: { errors },
   } = useForm<CheckoutSchemaType>({
     resolver: zodResolver(CheckoutSchema),
@@ -354,11 +355,11 @@ export function Cart() {
                     <TextRoboto className={styles.bold} variant="lg">
                       <p className={styles.bold}>Total</p>
                     </TextRoboto>
-                    <TextRoboto variant="lg">
+                    <TitleBaloo variant="md">
                       <p className={styles.bold}>
                         {totalDeItensAndFreteFormatted}
                       </p>
-                    </TextRoboto>
+                    </TitleBaloo>
                   </div>
 
                   <ButtonCheckout type="submit">

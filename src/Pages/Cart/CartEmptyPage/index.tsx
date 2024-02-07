@@ -11,7 +11,7 @@ export function CartEmptyPage() {
           <span>
             <ArrowLeft />
           </span>
-          Escolher cafés deliciosos
+          Voltar para o cardápio
         </ButtonReturn>
       </StyledNavLink>
     </Container>

@@ -3,13 +3,13 @@ export const colors = {
     'yellow-dark': '#C47F17',
     yellow: '#DBAC2C',
     'yellow-light': '#F1E9C9',
-  },
+  } as const, // as const -> para mostrar o hexadecimal da cor,
 
   purple: {
     'purple-dark': '#4B2995',
     purple: '#8047F8',
     'purple-light': '#EBE5F9',
-  },
+  } as const, // as const -> para mostrar o hexadecimal da cor,
 
   gray: {
     'gray-900': '#272221',
@@ -21,7 +21,7 @@ export const colors = {
     'gray-300': '#EDEDED',
     'gray-200': '#F3F2F2',
     'gray-100': '#FAFAFA',
-  },
+  } as const, // as const -> para mostrar o hexadecimal da cor,
 
   white: '#FFFFFF',
 }
