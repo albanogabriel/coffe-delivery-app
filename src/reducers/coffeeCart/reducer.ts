@@ -21,6 +21,7 @@ export interface CoffeeCart {
 }
 
 export interface CheckoutItens {
+  // zodSchema
   cep: string
   endereco: string
   numero: string
@@ -28,10 +29,14 @@ export interface CheckoutItens {
   bairro: string
   cidade: string
   UF: string
+  // manually
+  id?: string
   metodoPagamento?: string
-  pagamento?: string
   totalItens?: number
   totalPedido?: number
+  titles?: string[]
+  quantidadeDeItens?: number
+  startDate?: Date
 }
 
 export interface CoffeeState {
@@ -79,6 +84,7 @@ export function cyclesReducer(state: CoffeeState, action: any) {
         cart: [],
         checkoutItens: [...state.checkoutItens, action.payload.checkoutItens],
       }
+
     case ActionTypes.DECREASE_ITEM:
       return {
         ...state,
@@ -98,6 +104,7 @@ export function cyclesReducer(state: CoffeeState, action: any) {
           }
         }),
       }
+
     case ActionTypes.INCREASE_ITEM:
       return {
         ...state,
@@ -116,6 +123,7 @@ export function cyclesReducer(state: CoffeeState, action: any) {
           }
         }),
       }
+
     case ActionTypes.DELETE_ITEM:
       return {
         ...state,

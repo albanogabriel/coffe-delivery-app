@@ -81,19 +81,31 @@ export function Cart() {
   })
 
   function checkoutCoffeeItens(data: CheckoutItens) {
-    // 1 - direto do useState --> pega a const tipoDePagamento --> const pagamento = tipoDePagamento --> joga dentro do checkoutProducts ({ ...data , pagamento })
-    // 2 - Cria um booleando --> const tipoDePagamentoExists = tipoDePagamento.length > 0 --> existe alguma string dentro da const tipoDePagamentoExists ? se sim, renderiza o input --> { tipoDePagamentoExists ? <input value={tipoDePagamento}><input>}
+    // 1 - direto do useState --> pega a const tipoDePagamento --> const pagamento = tipoDePagamento --> joga dentro do checkoutProducts({ ...data , pagamento })
+    // 2 - Cria um booleando para renderizar o input --> const tipoDePagamentoExists = tipoDePagamento.length > 0 --> existe alguma string dentro da const tipoDePagamentoExists ? se sim, renderiza o input --> { tipoDePagamentoExists ? <input value={tipoDePagamento}><input>}
     // 3 - Método setValue --> do próprio useForm, atribui um valor direto ao objeto de nosso Schema --> setValue(1º param , 2º param) --> 1º param = atributo/propriedade , 2º param = 'valor que vai passar' --> exemplo: setValue('metodoPagamento', 'Crédito') --> atribui Crédito ao metodo de pagamento
+
     console.log(JSON.stringify(data, null, 2))
-    const pagamento = tipoDePagamento
+
+    const id = String(new Date().getTime()) // string por ser mais facil trabalhar id's com string
+    const metodoPagamento = tipoDePagamento
     const totalItens = totalDeItens
     const totalPedido = totalDeItens + frete
+    const titles = cart.map((item) => item.title) // retornar um array de titles
+    const quantidadeDeItens = cart
+      .map((item) => item.quantidade ?? 0)
+      .reduce((acc, numero) => acc + numero, 0)
+    const startDate = new Date()
 
     checkoutProducts({
       ...data,
-      pagamento,
+      id,
+      metodoPagamento,
       totalItens,
       totalPedido,
+      titles,
+      quantidadeDeItens,
+      startDate,
     })
 
     navigate('/orderconfirmed')

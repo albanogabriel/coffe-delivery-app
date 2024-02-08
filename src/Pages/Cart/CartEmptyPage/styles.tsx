@@ -33,7 +33,9 @@ export const ButtonReturn = styled.button`
   span {
     display: flex;
     justify-content: center;
-    transition: transform 0.2s ease; /* Adiciona uma transição suave de 0.3 segundos */
+    transition:
+      transform 0.5s ease,
+      background-color 0.3s; /* Adiciona uma transição suave de 0.3 segundos */
   }
 
   &:hover span {

@@ -14,6 +14,7 @@ export const CartButton = styled.button`
 `
 
 export const AddCartButton = styled(CartButton)`
+  transition: background-color 0.1s;
   background: ${(props) => props.theme.colors.purple['purple-dark']};
 
   &:hover {
@@ -35,6 +36,7 @@ export const ViewCartButton = styled(CartButton)`
     right: -12px;
     width: 25px;
     height: 25px;
+    transition: background-color 0.3s;
     color: ${(props) => props.theme.colors.white};
     background-color: ${(props) => props.theme.colors.yellow['yellow-dark']};
     border-radius: 50%;

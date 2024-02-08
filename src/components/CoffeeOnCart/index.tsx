@@ -71,7 +71,7 @@ export function CoffeeOnCart({ data }: Props) {
             </ContadorAndButton>
           </TitleAndContador>
         </ImgTitleAndContador>
-        <TitleBaloo variant="sm">{NumberFormattedToCurrency}</TitleBaloo>
+        <TitleBaloo variant="xs">{NumberFormattedToCurrency}</TitleBaloo>
       </CoffeeItemContainer>
       <Line />
     </ItemContainer>

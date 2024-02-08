@@ -21,6 +21,16 @@ import styles from './style.module.css'
 export function OrderConfirmedPage() {
   const { checkoutItens } = useContext(CoffeeContext)
 
+  const checkoutItensLastItem = checkoutItens[checkoutItens.length - 1] // irá retornar somente o último item do array de objetos
+
+  const totalFormatted = checkoutItensLastItem.totalPedido?.toLocaleString(
+    'pt-BR',
+    {
+      style: 'currency',
+      currency: 'BRL',
+    },
+  )
+
   return (
     <Container>
       <div>
@@ -32,59 +42,49 @@ export function OrderConfirmedPage() {
         </div>
       </div>
       <InfoAndImg>
-        {checkoutItens.map((checkoutItens) => {
-          const totalFormatted = checkoutItens.totalPedido?.toLocaleString(
-            'pt-BR',
-            {
-              style: 'currency',
-              currency: 'BRL',
-            },
-          )
+        <InfoItemBorderContainer>
+          <InfoItem>
+            <img src={pinCirclePurple} alt="" />
+            <InfoItemText>
+              <span>
+                Entrega em{' '}
+                <span className={styles.bold}>
+                  {checkoutItensLastItem.endereco},{' '}
+                  {checkoutItensLastItem.numero}
+                </span>
+              </span>
+              <span>
+                {checkoutItensLastItem.bairro} - {checkoutItensLastItem.cidade}
+              </span>
+            </InfoItemText>
+          </InfoItem>
+          <InfoItem>
+            <img src={chronometerYellow} alt="" />
+            <InfoItemText>
+              <span>Previsão de entrega </span>
+              <span>
+                <span className={styles.bold}>20 - 30 minutos</span>
+              </span>
+            </InfoItemText>
+          </InfoItem>
+          <InfoItem>
+            <img src={moneyDarkYellow} alt="" />
+            <InfoItemText>
+              <span>Método de pagamento </span>
+              <span className={styles.bold}>
+                {checkoutItensLastItem.metodoPagamento}
+              </span>
+            </InfoItemText>
+          </InfoItem>
+          <InfoItem>
+            <img src={valorTotal} alt="" />
+            <InfoItemText>
+              <span>Valor total </span>
+              <span className={styles.bold}>{totalFormatted}</span>
+            </InfoItemText>
+          </InfoItem>
+        </InfoItemBorderContainer>
 
-          return (
-            <InfoItemBorderContainer key={checkoutItens.endereco}>
-              <InfoItem>
-                <img src={pinCirclePurple} alt="" />
-                <InfoItemText>
-                  <span>
-                    Entrega em{' '}
-                    <span className={styles.bold}>
-                      {checkoutItens.endereco}, {checkoutItens.numero}
-                    </span>
-                  </span>
-                  <span>
-                    {checkoutItens.bairro} - {checkoutItens.cidade}
-                  </span>
-                </InfoItemText>
-              </InfoItem>
-              <InfoItem>
-                <img src={chronometerYellow} alt="" />
-                <InfoItemText>
-                  <span>Previsão de entrega </span>
-                  <span>
-                    <span className={styles.bold}>20 - 30 minutos</span>
-                  </span>
-                </InfoItemText>
-              </InfoItem>
-              <InfoItem>
-                <img src={moneyDarkYellow} alt="" />
-                <InfoItemText>
-                  <span>Método de pagamento </span>
-                  <span className={styles.bold}>
-                    {checkoutItens.metodoPagamento}
-                  </span>
-                </InfoItemText>
-              </InfoItem>
-              <InfoItem>
-                <img src={valorTotal} alt="" />
-                <InfoItemText>
-                  <span>Valor total </span>
-                  <span className={styles.bold}>{totalFormatted}</span>
-                </InfoItemText>
-              </InfoItem>
-            </InfoItemBorderContainer>
-          )
-        })}
         <img src={motoBoyImg} alt="" />
       </InfoAndImg>
     </Container>

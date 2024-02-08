@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from 'react'
 import coffeeDeliveryLogo from '../../assets/coffeeDeliveryLogo.svg'
-import { SecundaryButton } from '../../components/Buttons/ButtonSecundary'
-import { ButtonShoppingCart } from '../../components/Buttons/ButtonShoppingCart'
-import { HeaderLayout } from './style'
+import { SecundaryButton } from '../Buttons/ButtonSecundary'
+import { ButtonShoppingCart } from '../Buttons/ButtonShoppingCart'
+import { HeaderLayout, StyledNavLink } from './style'
 import { NavLink } from 'react-router-dom'
 import { CoffeeContext } from '../../contexts/CoffeeContext'
 
@@ -18,7 +18,7 @@ export function Header() {
   useEffect(() => {
     function handleScroll() {
       const scrollPosition = window.scrollY
-      const scrollPositionTrigger = 50 // Ajustar conforme necessário
+      const scrollPositionTrigger = 35 // Ajustar conforme necessário
       setIsScrolled(scrollPosition > scrollPositionTrigger) // Verifica se a posição de rolagem ultrapassou o limite -> vai mudar a const para true
     }
 
@@ -30,26 +30,26 @@ export function Header() {
     }
   }, [])
 
-  function handleUpdateCart() {}
-
   return (
     <HeaderLayout isScrolled={isScrolled}>
       <NavLink to="/">
         <img src={coffeeDeliveryLogo} alt="" />
       </NavLink>
       <div>
-        <NavLink to="#location">
+        <StyledNavLink to="#location">
           <SecundaryButton variant="location">
             Florianópolis, SC
           </SecundaryButton>
-        </NavLink>
+        </StyledNavLink>
         <NavLink to="/cart">
           <ButtonShoppingCart
             variant="cartView"
             itens={cartItensAmount}
             title={'ver carrinho'}
-            onClick={handleUpdateCart}
           />
+        </NavLink>
+        <NavLink to="/pedidos">
+          <SecundaryButton variant="pedidos" />
         </NavLink>
       </div>
     </HeaderLayout>

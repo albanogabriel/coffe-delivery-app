@@ -131,6 +131,7 @@ export const ButtonCheckout = styled.button`
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.yellow.yellow};

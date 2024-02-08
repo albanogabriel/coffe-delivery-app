@@ -1,5 +1,10 @@
 import { ButtonHTMLAttributes, ReactNode, useState } from 'react'
-import { ButtonSecundaryLocation, ButtonSecundaryTrash } from './styles'
+import {
+  ButtonSecundaryCheckout,
+  ButtonSecundaryLocation,
+  ButtonSecundaryTrash,
+  StyledNotepad,
+} from './styles'
 
 import trashIcon from '../../../assets/icons/trash-purple-icon.svg'
 import locationIcon from '../../../assets/icons/ma-pin-fill-purple-icon.svg'
@@ -7,7 +12,7 @@ import locationIcon from '../../../assets/icons/ma-pin-fill-purple-icon.svg'
 export interface SecundaryButtonType
   extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode
-  variant: 'trash' | 'location'
+  variant: 'trash' | 'location' | 'pedidos'
 }
 
 export function SecundaryButton({
@@ -34,6 +39,12 @@ export function SecundaryButton({
         <img src={locationIcon} alt="" />
         {mouseEnter ? <div>{children}</div> : null}
       </ButtonSecundaryLocation>
+    )
+  } else if (variant === 'pedidos') {
+    return (
+      <ButtonSecundaryCheckout>
+        <StyledNotepad size={21} />
+      </ButtonSecundaryCheckout>
     )
   } else {
     return null

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Notepad } from 'phosphor-react'
 
 export const Button = styled.button`
   font-family: ${(props) => props.theme.buttonStyle.buttonMedium.font};
@@ -50,4 +51,15 @@ export const ButtonSecundaryLocation = styled(Button)`
   &:hover {
     background: ${(props) => props.theme.colors.purple['purple-light']};
   }
+`
+
+export const ButtonSecundaryCheckout = styled(Button)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+`
+
+export const StyledNotepad = styled(Notepad)`
+  color: ${(props) => props.theme.colors.purple['purple-dark']};
 `
