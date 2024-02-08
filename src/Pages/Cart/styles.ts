@@ -37,6 +37,10 @@ export const Input = styled.input`
   &:focus {
     box-shadow: 0 0 0 1.25px ${(props) => props.theme.colors.purple.purple};
   }
+
+  &::placeholder {
+    color: ${(props) => props.theme.colors.gray['gray-600']};
+  }
 `
 
 export const InputContainer = styled.div`
@@ -75,6 +79,7 @@ export const SelectUF = styled.select`
   border: 1px solid ${(props) => props.theme.colors.gray['gray-500']};
   border-radius: 4px;
   width: 100px;
+  color: ${(props) => props.theme.colors.gray['gray-600']};
 
   // -webkit-appearance: none; /* Remove a aparência padrão da seta em alguns navegadores */
   // background-image: url('src/assets/arrow-down.svg'); /* Substitua 'sua-imagem-da-seta.png' pelo caminho da sua imagem de seta */~
