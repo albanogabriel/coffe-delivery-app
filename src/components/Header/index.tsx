@@ -41,15 +41,15 @@ export function Header() {
             Florianópolis, SC
           </SecundaryButton>
         </StyledNavLink>
+        <NavLink to="/pedidos">
+          <SecundaryButton variant="pedidos" />
+        </NavLink>
         <NavLink to="/cart">
           <ButtonShoppingCart
             variant="cartView"
             itens={cartItensAmount}
             title={'ver carrinho'}
           />
-        </NavLink>
-        <NavLink to="/pedidos">
-          <SecundaryButton variant="pedidos" />
         </NavLink>
       </div>
     </HeaderLayout>
